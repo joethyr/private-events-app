@@ -8,9 +8,21 @@
 
 <div id="events">
   <% @events.each do |event| %>
-    <%= render event %>
     <p>
-      <%= link_to "Show this event", event %>
+      <strong>Title:</strong>
+      <%= event.title %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= event.date %>
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= event.location %>
+    </p>
+      <%= link_to "More Info", event %>
     </p>
   <% end %>
 </div
