@@ -11,27 +11,31 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :date, style: "display: block" %>
     <%= form.datetime_field :date %>
   </div>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :location, style: "display: block" %>
     <%= form.text_field :location %>
   </div>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description, size: "40x8" %>
   </div>
 
-  <div>
+  <div class="field form-group">
+    <%= form.number_field :creator_id, id: :event_creator_id, class: "form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
