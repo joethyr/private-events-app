@@ -6,14 +6,16 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    # @event = Event.new
+    @event = current_user.creator_events.build
   end
 
   def show
   end
 
   def create
-    @event = Event.new(event_params)
+    # the build method creates the event with the user's id prepopulated
+    @event = current_user.creator_events.build(event_params)
 
     respond_to do |format|
       if @event.save
