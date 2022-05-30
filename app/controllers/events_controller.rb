@@ -26,6 +26,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @event.update(event_params)
+        format.html { redirect_to event_url(@event), notice: "Your event was successfully updated." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @event.destroy
+
+    respond_to do |format|
+      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+    end
+  end
+
   private
 
   def set_event
