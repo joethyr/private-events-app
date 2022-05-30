@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   end
 
   root "events#index"
-  resources :events
-  # resources :invitations, only: [:create, :destroy, :update]
   resources :events do
     member do
       get 'accept_invitation'

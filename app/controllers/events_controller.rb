@@ -13,6 +13,9 @@ class EventsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def create
     # the build method creates the event with the user's id prepopulated
     @event = current_user.creator_events.build(event_params)
