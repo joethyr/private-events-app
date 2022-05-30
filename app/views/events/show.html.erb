@@ -1,3 +1,7 @@
+<% if @event.date < Time.now %>
+  <div class="alert alert-secondary text-center" role="alert">Event registration is now closed.</div>
+<% end %>
+
 <%= render @event %>
 <div>
   <%= link_to "Back to events", events_path %>
