@@ -8,4 +8,11 @@ Rails.application.routes.draw do
 
   root "events#index"
   resources :events
+  # resources :invitations, only: [:create, :destroy, :update]
+  resources :events do
+    member do
+      get 'accept_invitation'
+      get 'cancel_invitation'
+    end
+  end
 end
