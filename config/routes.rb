@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get '/user/:id', to: 'users#set_user', as: :user
   devise_for :users, :controllers => {
   registrations: 'registrations'
   }
