@@ -1,2 +1,41 @@
-<h1>Users#set_user</h1>
-<p>Find me in app/views/users/set_user.html.erb</p>
+<h1 class="mb-4">Hi <%= @user.name %>, </h1>
+
+<div class="col">
+  <div class="row-md mb-4">
+    <p class="text-muted">EVENTS CREATED</p>
+    <div class="row">
+        <% @user.creator_events.each do |event| %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= event.title %>
+                </h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><%= event.location %></h6>
+              <p class="card-text d-inline-block text-truncate"><%= event.description %></p>
+              <div><%= link_to "see more", event %></div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row-md mb-4">
+    <p class="text-muted"> EVENTS ATTENDED</p>
+    <div class="list-group mt-3">
+        <% @user.attended_events.each do |event| %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= event.title %>
+                </h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><%= event.location %></h6>
+              <p class="card-text d-inline-block text-truncate" style="max-width: 250px;"><%= event.description %></p>
+              <a href="#" class="card-link"><%= link_to "see more", event %></a>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

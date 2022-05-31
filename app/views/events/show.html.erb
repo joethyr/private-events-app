@@ -14,8 +14,7 @@
     <p class="card-text"><%= @event.description %></p>
     <div class>
       <% if current_user == @event.creator %>
-        <%= link_to 'Edit', edit_event_path, class: "btn btn-primary" %>
-        <br>
+        <%= link_to 'Edit', edit_event_path, class: "btn btn-primary mb-1" %>
         <%= button_to 'Delete', event_path, method: :delete, class: "btn btn-primary" %>
       <% elsif @event.attendees.include?(current_user) %>
         <%= link_to 'Cancel Invite', cancel_invitation_event_path, class: "btn btn-primary" %>
@@ -25,3 +24,16 @@
     </div>
   </div>
 </div>
+
+<h5 class=" text-muted mb-1">Lists of Attendees</h4>
+<% if @event.attendees.empty? %>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item text-muted">None</li>
+</ul>
+<% else %>
+  <ul class="list-group list-group-flush">
+    <% @event.attendees.each do |attendee| %>
+    <li class="list-group-item text-muted"> <%= attendee.name %> </li>
+    <% end %>
+  </ul>
+<% end %>
