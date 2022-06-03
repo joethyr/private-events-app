@@ -1,24 +1,30 @@
-# README
+# Project: Private Events App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A site that allows users to create events and then manage user signups.
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+The goal for the project is to build a site similar to a private Eventbrite which allows users to create events and then manage user signups.
+A user can create events. A user can attend many events. An event can be attended by many users. Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
 
-* System dependencies
+This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before.
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Ruby Version
 
-* Database initialization
+* Rails 7 requires Ruby 2.7.0 or newer.
 
-* How to run the test suite
+## Help
 
-* Services (job queues, cache servers, search engines, etc.)
+Run command to view all of the options you can pass to rails application.
+```
+rails new --help
+```
+## Links
+[Heroku App](https://afternoon-depths-31503.herokuapp.com/)
 
-* Deployment instructions
+## Web Resources
 
-* ...
+* [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-blog-app)
+* [Rails Guides](https://guides.rubyonrails.org/getting_started.html)
